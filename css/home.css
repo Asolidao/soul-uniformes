@@ -4,7 +4,6 @@
     --azul-claro: #3399ff;
     --branco: #ffffff;
     --cinza-claro: #f5f5f5;
-    --sombra-padrao: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 body {
@@ -25,17 +24,10 @@ header {
     background-color: var(--azul-escuro);
     color: var(--branco);
     padding: 1rem 0;
-    box-shadow: var(--sombra-padrao);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     position: sticky;
     top: 0;
     z-index: 100;
-    transition: all 0.3s ease-in-out; /* Transição suave para efeitos */
-    will-change: transform, box-shadow; /* Otimização de animação */
-}
-
-header.rolando {
-    transform: translateY(-50px); /* Move o header para cima */
-    box-shadow: none;
 }
 
 .header-content {
@@ -49,8 +41,6 @@ header.rolando {
     font-size: 2rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: var(--branco);
-    text-decoration: none;
 }
 
 .logo span {
@@ -71,7 +61,7 @@ nav ul li a {
     color: var(--branco);
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: color 0.3s;
 }
 
 nav ul li a:hover {
@@ -87,12 +77,6 @@ nav ul li a:hover {
     background-blend-mode: multiply;
     background-size: cover;
     background-position: center;
-    animation: heroFadeIn 1s forwards; /* Animação de entrada */
-}
-
-@keyframes heroFadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
 }
 
 .hero h1 {
@@ -150,14 +134,12 @@ nav ul li a:hover {
     border-radius: 4px;
     cursor: pointer;
     font-weight: bold;
-    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: all 0.3s;
 }
 
 .categoria-btn.active, .categoria-btn:hover {
     background-color: var(--azul-medio);
     color: var(--branco);
-    transform: scale(1.05);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .produtos {
@@ -181,9 +163,8 @@ nav ul li a:hover {
     background-color: var(--branco);
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: var(--sombra-padrao);
-    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    will-change: transform, box-shadow;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .produto:hover {
@@ -227,7 +208,6 @@ nav ul li a:hover {
 .beneficio {
     text-align: center;
     padding: 1.5rem;
-    animation: beneficioFadeIn 0.8s backwards; /* Animação */
 }
 
 .beneficio i {
@@ -240,23 +220,9 @@ nav ul li a:hover {
     margin-bottom: 1rem;
 }
 
-/* Keyframe animation for beneficios */
-@keyframes beneficioFadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Apply animation delay to each beneficio */
-.beneficio:nth-child(1) { animation-delay: 0.2s; }
-.beneficio:nth-child(2) { animation-delay: 0.4s; }
-.beneficio:nth-child(3) { animation-delay: 0.6s; }
-.beneficio:nth-child(4) { animation-delay: 0.8s; }
-
-
 .contato-rapido {
     padding: 3rem 0;
     text-align: center;
-    background-color: var(--cinza-claro); /* Fundo sutil para destacar */
 }
 
 .contato-rapido h2 {
@@ -295,7 +261,7 @@ footer {
 .footer-col ul li a {
     color: var(--branco);
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color 0.3s;
 }
 
 .footer-col ul li a:hover {
@@ -333,9 +299,5 @@ footer {
     
     .grid-produtos {
         grid-template-columns: 1fr;
-    }
-
-    .grid-beneficios {
-        grid-template-columns: 1fr; /* Um benefício por linha em telas menores */
     }
 }

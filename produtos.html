@@ -4,21 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nossos Produtos - Soul Uniformes e Brindes</title>
-    <meta name="description" content="Encontre uniformes corporativos e brindes personalizados de alta qualidade para sua empresa.">
-    <meta name="keywords" content="uniformes, brindes, personalizados, corporativos, camisa social, camisa polo, caneca, ecobag">
     <link rel="stylesheet" href="css/produtos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
         <div class="container header-content">
-            <a href="index.html" class="logo">So<span>ul</span></a>
+            <div class="logo">So<span>ul</span></div>
             <nav>
                 <ul>
-                    <li><a href="index.html" aria-label="Voltar para a Home">Home</a></li>
-                    <li><a href="sobre.html" aria-label="Sobre Nós">Sobre</a></li>
-                    <li><a href="produtos.html" aria-label="Nossos Produtos">Produtos</a></li>
-                    <li><a href="contato.html" aria-label="Entre em Contato">Contato</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="contato.html">Contato</a></li>
                 </ul>
             </nav>
         </div>
@@ -31,193 +29,182 @@
         </div>
     </section>
     
-    <main>
-        <section class="filtros">
-            <div class="container">
-                <div class="filtros-container">
-                    <button class="filtro-btn active" data-categoria="todos">Todos</button>
-                    <button class="filtro-btn" data-categoria="uniformes">Uniformes</button>
-                    <button class="filtro-btn" data-categoria="brindes">Brindes</button>
-                    <button class="filtro-btn" data-categoria="promocoes">Promoções</button>
-                    <button class="filtro-btn" data-categoria="novidades">Novidades</button>
-                </div>
+    <section class="filtros">
+        <div class="container">
+            <div class="filtros-container">
+                <button class="filtro-btn active" data-categoria="todos">Todos</button>
+                <button class="filtro-btn" data-categoria="uniformes">Uniformes</button>
+                <button class="filtro-btn" data-categoria="brindes">Brindes</button>
+                <button class="filtro-btn" data-categoria="promocoes">Promoções</button>
+                <button class="filtro-btn" data-categoria="novidades">Novidades</button>
             </div>
-        </section>
-        
-        <section class="produtos-grid">
-            <div class="container">
-                <div class="categoria-produtos">
-                    <h2 class="categoria-titulo">Uniformes Corporativos</h2>
-                    <div class="produtos-lista">
-                        <div class="produto-card" data-categoria="uniformes">
-                            <img src="https://via.placeholder.com/400x300?text=Camisa+Social" alt="Camisa Social Personalizada" class="produto-imagem">
-                            <div class="produto-detalhes">
-                                <h3 class="produto-titulo">Camisa Social Personalizada</h3>
-                                <p class="produto-descricao">Camisa social de alta qualidade com opções de personalização no peito e mangas.</p>
-                                <span class="produto-preco">R$ 89,90</span>
-                                <a href="https://wa.me/5554981666377?text=Olá%20Soul,%20gostaria%20de%20um%20orçamento%20sobre%20[PRODUTO]" 
-                                    class="produto-btn" 
-                                    target="_blank"
-                                    style="display: inline-block; text-decoration: none; text-align: center;"
-                                    aria-label="Solicitar orçamento de Camisa Social Personalizada">
-                                    Solicitar Orçamento
-                                </a>
-                            </div>
-                        </div>
-                        
-                        <div class="produto-card" data-categoria="uniformes">
-                            <img src="https://via.placeholder.com/400x300?text=Camisa+Polo" alt="Camisa Polo Corporativa" class="produto-imagem">
-                            <div class="produto-detalhes">
-                                <h3 class="produto-titulo">Camisa Polo Corporativa</h3>
-                                <p class="produto-descricao">Polo em algodão penteado com acabamento premium e durabilidade garantida.</p>
-                                <span class="produto-preco">R$ 69,90</span>
-                                <a href="https://wa.me/5554981666377?text=Olá%20Soul,%20gostaria%20de%20um%20orçamento%20sobre%20[PRODUTO]" 
-                                    class="produto-btn" 
-                                    target="_blank"
-                                    style="display: inline-block; text-decoration: none; text-align: center;"
-                                    aria-label="Solicitar orçamento de Camisa Polo Corporativa">
-                                    Solicitar Orçamento
-                                </a>
-                            </div>
-                        </div>
-                        
-                        <div class="produto-card" data-categoria="uniformes promocoes">
-                            <img src="https://via.placeholder.com/400x300?text=Moleton" alt="Moleton com Capuz" class="produto-imagem">
-                            <div class="produto-detalhes">
-                                <span class="produto-etiqueta">Promoção</span>
-                                <h3 class="produto-titulo">Moleton com Capuz</h3>
-                                <p class="produto-descricao">Moleton premium para uniformes de inverno ou eventos corporativos.</p>
-                                <span class="produto-preco">R$ 119,90</span>
-                                <a href="https://wa.me/5554981666377?text=Olá%20Soul,%20gostaria%20de%20um%20orçamento%20sobre%20[PRODUTO]" 
-                                    class="produto-btn" 
-                                    target="_blank"
-                                    style="display: inline-block; text-decoration: none; text-align: center;"
-                                    aria-label="Solicitar orçamento de Moleton com Capuz">
-                                    Solicitar Orçamento
-                                </a>
-                            </div>
+        </div>
+    </section>
+    
+    <section class="produtos-grid">
+        <div class="container">
+            <div class="categoria-produtos">
+                <h2 class="categoria-titulo">Uniformes Corporativos</h2>
+                <div class="produtos-lista">
+                    <div class="produto-card" data-categoria="uniformes">
+                        <img src="https://via.placeholder.com/400x300?text=Camisa+Social" alt="Camisa Social Personalizada" class="produto-imagem">
+                        <div class="produto-detalhes">
+                            <h3 class="produto-titulo">Camisa Social Personalizada</h3>
+                            <p class="produto-descricao">Camisa social de alta qualidade com opções de personalização no peito e mangas.</p>
+                            <span class="produto-preco">R$ 89,90</span>
+                            <a href="https://wa.me/5554981666377?text=Olá%20Soul,%20gostaria%20de%20um%20orçamento%20sobre%20[PRODUTO]" 
+                                class="produto-btn" 
+                                target="_blank"
+                                style="display: inline-block; text-decoration: none; text-align: center;">
+                                Solicitar Orçamento
+                            </a>
                         </div>
                     </div>
-                </div>
-                
-                <div class="categoria-produtos">
-                    <h2 class="categoria-titulo">Brindes Personalizados</h2>
-                    <div class="produtos-lista">
-                        <div class="produto-card" data-categoria="brindes">
-                            <img src="https://via.placeholder.com/400x300?text=Caneca" alt="Caneca Personalizada" class="produto-imagem">
-                            <div class="produto-detalhes">
-                                <h3 class="produto-titulo">Caneca Personalizada</h3>
-                                <p class="produto-descricao">Caneca cerâmica de alta qualidade com impressão digital de alta durabilidade.</p>
-                                <span class="produto-preco">R$ 24,90</span>
-                                <a href="https://wa.me/5554981666377?text=Olá%20Soul,%20gostaria%20de%20um%20orçamento%20sobre%20[PRODUTO]" 
-                                    class="produto-btn" 
-                                    target="_blank"
-                                    style="display: inline-block; text-decoration: none; text-align: center;"
-                                    aria-label="Solicitar orçamento de Caneca Personalizada">
-                                    Solicitar Orçamento
-                                </a>
-                            </div>
-                        </div>
-                        
-                        <div class="produto-card" data-categoria="brindes novidades">
-                            <img src="https://via.placeholder.com/400x300?text=Power+Bank" alt="Power Bank Personalizado" class="produto-imagem">
-                            <div class="produto-detalhes">
-                                <span class="produto-etiqueta">Novidade</span>
-                                <h3 class="produto-titulo">Power Bank Personalizado</h3>
-                                <p class="produto-descricao">Carregador portátil com capacidade de 10000mAh e logo da sua empresa.</p>
-                                <span class="produto-preco">R$ 89,90</span>
-                                <a href="https://wa.me/5554981666377?text=Olá%20Soul,%20gostaria%20de%20um%20orçamento%20sobre%20[PRODUTO]" 
-                                    class="produto-btn" 
-                                    target="_blank"
-                                    style="display: inline-block; text-decoration: none; text-align: center;"
-                                    aria-label="Solicitar orçamento de Power Bank Personalizado">
-                                    Solicitar Orçamento
-                                </a>
-                            </div>
-                        </div>
-                        
-                        <div class="produto-card" data-categoria="brindes">
-                            <img src="https://via.placeholder.com/400x300?text=Eco+Bag" alt="Eco Bag Personalizada" class="produto-imagem">
-                            <div class="produto-detalhes">
-                                <h3 class="produto-titulo">Eco Bag Personalizada</h3>
-                                <p class="produto-descricao">Sacola ecológica em algodão cru com estampa da sua marca.</p>
-                                <span class="produto-preco">R$ 19,90</span>
-                                <a href="https://wa.me/5554981666377?text=Olá%20Soul,%20gostaria%20de%20um%20orçamento%20sobre%20[PRODUTO]" 
-                                    class="produto-btn" 
-                                    target="_blank"
-                                    style="display: inline-block; text-decoration: none; text-align: center;"
-                                    aria-label="Solicitar orçamento de Eco Bag Personalizada">
-                                    Solicitar Orçamento
-                                </a>
-                            </div>
+                    
+                    <div class="produto-card" data-categoria="uniformes">
+                        <img src="https://via.placeholder.com/400x300?text=Camisa+Polo" alt="Camisa Polo Corporativa" class="produto-imagem">
+                        <div class="produto-detalhes">
+                            <h3 class="produto-titulo">Camisa Polo Corporativa</h3>
+                            <p class="produto-descricao">Polo em algodão penteado com acabamento premium e durabilidade garantida.</p>
+                            <span class="produto-preco">R$ 69,90</span>
+                            <a href="https://wa.me/5554981666377?text=Olá%20Soul,%20gostaria%20de%20um%20orçamento%20sobre%20[PRODUTO]" 
+                                class="produto-btn" 
+                                target="_blank"
+                                style="display: inline-block; text-decoration: none; text-align: center;">
+                                Solicitar Orçamento
+                            </a>
                         </div>
                     </div>
-                </div>
-                
-                <div class="categoria-produtos">
-                    <h2 class="categoria-titulo">Kits Corporativos</h2>
-                    <div class="produtos-lista">
-                        <div class="produto-card" data-categoria="uniformes brindes">
-                            <img src="https://via.placeholder.com/400x300?text=Kit+Executivo" alt="Kit Executivo" class="produto-imagem">
-                            <div class="produto-detalhes">
-                                <h3 class="produto-titulo">Kit Executivo</h3>
-                                <p class="produto-descricao">Camisa social + caneca + pasta executiva com logo bordado/estampado.</p>
-                                <span class="produto-preco">R$ 199,90</span>
-                                <a href="https://wa.me/5554981666377?text=Olá%20Soul,%20gostaria%20de%20um%20orçamento%20sobre%20[PRODUTO]" 
-                                    class="produto-btn" 
-                                    target="_blank"
-                                    style="display: inline-block; text-decoration: none; text-align: center;"
-                                    aria-label="Solicitar orçamento de Kit Executivo">
-                                    Solicitar Orçamento
-                                </a>
-                            </div>
-                        </div>
-                        
-                        <div class="produto-card" data-categoria="uniformes brindes promocoes">
-                            <img src="https://via.placeholder.com/400x300?text=Kit+Operacional" alt="Kit Operacional" class="produto-imagem">
-                            <div class="produto-detalhes">
-                                <span class="produto-etiqueta">Promoção</span>
-                                <h3 class="produto-titulo">Kit Operacional</h3>
-                                <p class="produto-descricao">Camisa polo + boné + squeeze personalizados para equipes operacionais.</p>
-                                <span class="produto-preco">R$ 159,90</span>
-                                <a href="https://wa.me/5554981666377?text=Olá%20Soul,%20gostaria%20de%20um%20orçamento%20sobre%20[PRODUTO]" 
-                                    class="produto-btn" 
-                                    target="_blank"
-                                    style="display: inline-block; text-decoration: none; text-align: center;"
-                                    aria-label="Solicitar orçamento de Kit Operacional">
-                                    Solicitar Orçamento
-                                </a>
-                            </div>
-                        </div>
-                        
-                        <div class="produto-card" data-categoria="brindes">
-                            <img src="https://via.placeholder.com/400x300?text=Kit+Presente" alt="Kit Presente" class="produto-imagem">
-                            <div class="produto-detalhes">
-                                <h3 class="produto-titulo">Kit Presente</h3>
-                                <p class="produto-descricao">Caneca + chocolate + pen drive personalizados para presentear clientes.</p>
-                                <span class="produto-preco">R$ 79,90</span>
-                                <a href="https://wa.me/5554981666377?text=Olá%20Soul,%20gostaria%20de%20um%20orçamento%20sobre%20[PRODUTO]" 
-                                    class="produto-btn" 
-                                    target="_blank"
-                                    style="display: inline-block; text-decoration: none; text-align: center;"
-                                    aria-label="Solicitar orçamento de Kit Presente">
-                                    Solicitar Orçamento
-                                </a>
-                            </div>
+                    
+                    <div class="produto-card" data-categoria="uniformes promocoes">
+                        <img src="https://via.placeholder.com/400x300?text=Moleton" alt="Moleton com Capuz" class="produto-imagem">
+                        <div class="produto-detalhes">
+                            <span class="produto-etiqueta">Promoção</span>
+                            <h3 class="produto-titulo">Moleton com Capuz</h3>
+                            <p class="produto-descricao">Moleton premium para uniformes de inverno ou eventos corporativos.</p>
+                            <span class="produto-preco">R$ 119,90</span>
+                            <a href="https://wa.me/5554981666377?text=Olá%20Soul,%20gostaria%20de%20um%20orçamento%20sobre%20[PRODUTO]" 
+                                class="produto-btn" 
+                                target="_blank"
+                                style="display: inline-block; text-decoration: none; text-align: center;">
+                                Solicitar Orçamento
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-        
-        <section class="destaque-produtos">
-            <div class="container destaque-container">
-                <h2>Precisa de algo específico?</h2>
-                <p>Trabalhamos com soluções personalizadas para atender às necessidades exclusivas da sua empresa. Nossa equipe está pronta para desenvolver o produto ideal para você.</p>
-                <a href="contato.html" class="destaque-btn" aria-label="Fale com nossos consultores">Fale com nossos consultores</a>
+            
+            <div class="categoria-produtos">
+                <h2 class="categoria-titulo">Brindes Personalizados</h2>
+                <div class="produtos-lista">
+                    <div class="produto-card" data-categoria="brindes">
+                        <img src="https://via.placeholder.com/400x300?text=Caneca" alt="Caneca Personalizada" class="produto-imagem">
+                        <div class="produto-detalhes">
+                            <h3 class="produto-titulo">Caneca Personalizada</h3>
+                            <p class="produto-descricao">Caneca cerâmica de alta qualidade com impressão digital de alta durabilidade.</p>
+                            <span class="produto-preco">R$ 24,90</span>
+                            <a href="https://wa.me/5554981666377?text=Olá%20Soul,%20gostaria%20de%20um%20orçamento%20sobre%20[PRODUTO]" 
+                                class="produto-btn" 
+                                target="_blank"
+                                style="display: inline-block; text-decoration: none; text-align: center;">
+                                Solicitar Orçamento
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="produto-card" data-categoria="brindes novidades">
+                        <img src="https://via.placeholder.com/400x300?text=Power+Bank" alt="Power Bank Personalizado" class="produto-imagem">
+                        <div class="produto-detalhes">
+                            <span class="produto-etiqueta">Novidade</span>
+                            <h3 class="produto-titulo">Power Bank Personalizado</h3>
+                            <p class="produto-descricao">Carregador portátil com capacidade de 10000mAh e logo da sua empresa.</p>
+                            <span class="produto-preco">R$ 89,90</span>
+                            <a href="https://wa.me/5554981666377?text=Olá%20Soul,%20gostaria%20de%20um%20orçamento%20sobre%20[PRODUTO]" 
+                                class="produto-btn" 
+                                target="_blank"
+                                style="display: inline-block; text-decoration: none; text-align: center;">
+                                Solicitar Orçamento
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="produto-card" data-categoria="brindes">
+                        <img src="https://via.placeholder.com/400x300?text=Eco+Bag" alt="Eco Bag Personalizada" class="produto-imagem">
+                        <div class="produto-detalhes">
+                            <h3 class="produto-titulo">Eco Bag Personalizada</h3>
+                            <p class="produto-descricao">Sacola ecológica em algodão cru com estampa da sua marca.</p>
+                            <span class="produto-preco">R$ 19,90</span>
+                            <a href="https://wa.me/5554981666377?text=Olá%20Soul,%20gostaria%20de%20um%20orçamento%20sobre%20[PRODUTO]" 
+                                class="produto-btn" 
+                                target="_blank"
+                                style="display: inline-block; text-decoration: none; text-align: center;">
+                                Solicitar Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </section>
-    </main>
+            
+            <div class="categoria-produtos">
+                <h2 class="categoria-titulo">Kits Corporativos</h2>
+                <div class="produtos-lista">
+                    <div class="produto-card" data-categoria="uniformes brindes">
+                        <img src="https://via.placeholder.com/400x300?text=Kit+Executivo" alt="Kit Executivo" class="produto-imagem">
+                        <div class="produto-detalhes">
+                            <h3 class="produto-titulo">Kit Executivo</h3>
+                            <p class="produto-descricao">Camisa social + caneca + pasta executiva com logo bordado/estampado.</p>
+                            <span class="produto-preco">R$ 199,90</span>
+                            <a href="https://wa.me/5554981666377?text=Olá%20Soul,%20gostaria%20de%20um%20orçamento%20sobre%20[PRODUTO]" 
+                                class="produto-btn" 
+                                target="_blank"
+                                style="display: inline-block; text-decoration: none; text-align: center;">
+                                Solicitar Orçamento
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="produto-card" data-categoria="uniformes brindes promocoes">
+                        <img src="https://via.placeholder.com/400x300?text=Kit+Operacional" alt="Kit Operacional" class="produto-imagem">
+                        <div class="produto-detalhes">
+                            <span class="produto-etiqueta">Promoção</span>
+                            <h3 class="produto-titulo">Kit Operacional</h3>
+                            <p class="produto-descricao">Camisa polo + boné + squeeze personalizados para equipes operacionais.</p>
+                            <span class="produto-preco">R$ 159,90</span>
+                            <a href="https://wa.me/5554981666377?text=Olá%20Soul,%20gostaria%20de%20um%20orçamento%20sobre%20[PRODUTO]" 
+                                class="produto-btn" 
+                                target="_blank"
+                                style="display: inline-block; text-decoration: none; text-align: center;">
+                                Solicitar Orçamento
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="produto-card" data-categoria="brindes">
+                        <img src="https://via.placeholder.com/400x300?text=Kit+Presente" alt="Kit Presente" class="produto-imagem">
+                        <div class="produto-detalhes">
+                            <h3 class="produto-titulo">Kit Presente</h3>
+                            <p class="produto-descricao">Caneca + chocolate + pen drive personalizados para presentear clientes.</p>
+                            <span class="produto-preco">R$ 79,90</span>
+                            <a href="https://wa.me/5554981666377?text=Olá%20Soul,%20gostaria%20de%20um%20orçamento%20sobre%20[PRODUTO]" 
+                                class="produto-btn" 
+                                target="_blank"
+                                style="display: inline-block; text-decoration: none; text-align: center;">
+                                Solicitar Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="destaque-produtos">
+        <div class="container destaque-container">
+            <h2>Precisa de algo específico?</h2>
+            <p>Trabalhamos com soluções personalizadas para atender às necessidades exclusivas da sua empresa. Nossa equipe está pronta para desenvolver o produto ideal para você.</p>
+            <a href="contato.html" class="destaque-btn">Fale com nossos consultores</a>
+        </div>
+    </section>
     
     <footer>
         <div class="container">
@@ -230,10 +217,10 @@
                 <div class="footer-col">
                     <h3>Links Rápidos</h3>
                     <ul>
-                        <li><a href="index.html" aria-label="Voltar para a Home">Home</a></li>
-                        <li><a href="sobre.html" aria-label="Saber Mais Sobre Nós">Sobre Nós</a></li>
-                        <li><a href="produtos.html" aria-label="Ver Nossos Produtos">Nossos Produtos</a></li>
-                        <li><a href="contato.html" aria-label="Falar Conosco">Contato</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="sobre.html">Sobre Nós</a></li>
+                        <li><a href="produtos.html">Nossos Produtos</a></li>
+                        <li><a href="contato.html">Contato</a></li>
                     </ul>
                 </div>
                 

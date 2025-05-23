@@ -4,19 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soul - Uniformes e Brindes Corporativos</title>
+    <meta name="description" content="Uniformes e brindes personalizados para sua empresa. Qualidade e estilo para fortalecer sua marca.">
+    <meta name="keywords" content="uniformes, brindes, personalizados, corporativos, empresa, logo, estamparia">
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
         <div class="container header-content">
-            <div class="logo">So<span>ul</span></div>
+            <a href="index.html" class="logo">So<span>ul</span></a>
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="sobre.html">Sobre</a></li>
-                    <li><a href="produtos.html">Produtos</a></li>
-                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="index.html" aria-label="Página Inicial">Home</a></li>
+                    <li><a href="sobre.html" aria-label="Sobre Nós">Sobre</a></li>
+                    <li><a href="produtos.html" aria-label="Nossos Produtos">Produtos</a></li>
+                    <li><a href="contato.html" aria-label="Entre em Contato">Contato</a></li>
                 </ul>
             </nav>
         </div>
@@ -30,47 +32,49 @@
         </div>
     </section>
     
-    <section class="categorias">
-        <div class="container">
-            <h2>Nossas Categorias</h2>
-            <div class="categoria-botoes">
-                <button class="categoria-btn active">Todos</button>
-                <button class="categoria-btn">Uniformes</button>
-                <button class="categoria-btn">Brindes</button>
-            </div>
-        </div>
-    </section>
-    
-    <section class="produtos">
-        <div class="container">
-            <h2>Destaques</h2>
-            <div class="grid-produtos">
-                <div class="produto">
-                    <img src="https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Camisas Personalizadas">
-                    <div class="produto-info">
-                        <h3>Camisas Personalizadas</h3>
-                        <p>Camisas polo e social com o logo da sua empresa, diversos modelos e cores disponíveis.</p>
-                    </div>
-                </div>
-                
-                <div class="produto">
-                    <img src="https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Moletons Corporativos">
-                    <div class="produto-info">
-                        <h3>Moletons Corporativos</h3>
-                        <p>Conforto e profissionalismo para sua equipe, com opções de personalização.</p>
-                    </div>
-                </div>
-                
-                <div class="produto">
-                    <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Canecas Personalizadas">
-                    <div class="produto-info">
-                        <h3>Canecas Personalizadas</h3>
-                        <p>Brindes de alta qualidade para presentear clientes e colaboradores.</p>
-                    </div>
+    <main>
+        <section class="categorias">
+            <div class="container">
+                <h2>Nossas Categorias</h2>
+                <div class="categoria-botoes">
+                    <button class="categoria-btn active" data-categoria="todos">Todos</button>
+                    <button class="categoria-btn" data-categoria="uniformes">Uniformes</button>
+                    <button class="categoria-btn" data-categoria="brindes">Brindes</button>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+        
+        <section class="produtos">
+            <div class="container">
+                <h2>Destaques</h2>
+                <div class="grid-produtos">
+                    <div class="produto" data-categoria="uniformes">
+                        <img src="https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Camisas Personalizadas">
+                        <div class="produto-info">
+                            <h3>Camisas Personalizadas</h3>
+                            <p>Camisas polo e social com o logo da sua empresa, diversos modelos e cores disponíveis.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="produto" data-categoria="uniformes">
+                        <img src="https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Moletons Corporativos">
+                        <div class="produto-info">
+                            <h3>Moletons Corporativos</h3>
+                            <p>Conforto e profissionalismo para sua equipe, com opções de personalização.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="produto" data-categoria="brindes">
+                        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Canecas Personalizadas">
+                        <div class="produto-info">
+                            <h3>Canecas Personalizadas</h3>
+                            <p>Brindes de alta qualidade para presentear clientes e colaboradores.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
     
     <section class="beneficios">
         <div class="container">
@@ -122,10 +126,10 @@
                 <div class="footer-col">
                     <h3>Links Rápidos</h3>
                     <ul>
-                        <li><a href="Index.html">Home</a></li>
-                        <li><a href="sobre.html">Sobre Nós</a></li>
-                        <li><a href="produtos.html">Nossos Produtos</a></li>
-                        <li><a href="contato.html">Contato</a></li>
+                        <li><a href="index.html" aria-label="Voltar para a Home">Home</a></li>
+                        <li><a href="sobre.html" aria-label="Saber Mais Sobre Nós">Sobre Nós</a></li>
+                        <li><a href="produtos.html" aria-label="Ver Nossos Produtos">Nossos Produtos</a></li>
+                        <li><a href="contato.html" aria-label="Falar Conosco">Contato</a></li>
                     </ul>
                 </div>
                 
@@ -155,12 +159,19 @@
     </footer>
     
     <script>
-        // Simples função para alternar entre categorias
         document.querySelectorAll('.categoria-btn').forEach(btn => {
             btn.addEventListener('click', function() {
                 document.querySelector('.categoria-btn.active').classList.remove('active');
                 this.classList.add('active');
-                // Aqui você implementaria a filtragem real dos produtos
+                const categoria = this.dataset.categoria;
+
+                document.querySelectorAll('.produto').forEach(produto => {
+                    if (categoria === 'todos' || produto.dataset.categoria === categoria) {
+                        produto.style.display = 'block';
+                    } else {
+                        produto.style.display = 'none';
+                    }
+                });
             });
         });
     </script>

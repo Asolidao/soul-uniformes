@@ -4,6 +4,7 @@
     --azul-claro: #3399ff;
     --branco: #ffffff;
     --cinza-claro: #f5f5f5;
+    --sombra-padrao: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 body {
@@ -24,7 +25,7 @@ header {
     background-color: var(--azul-escuro);
     color: var(--branco);
     padding: 1rem 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: var(--sombra-padrao);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -41,6 +42,8 @@ header {
     font-size: 2rem;
     text-transform: uppercase;
     letter-spacing: 2px;
+    color: var(--branco);
+    text-decoration: none;
 }
 
 .logo span {
@@ -61,7 +64,7 @@ nav ul li a {
     color: var(--branco);
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
@@ -73,6 +76,19 @@ nav ul li a:hover {
     color: var(--branco);
     padding: 4rem 0;
     text-align: center;
+    animation: heroFadeIn 0.8s forwards;
+}
+
+@keyframes heroFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .hero-sobre h1 {
@@ -84,17 +100,22 @@ nav ul li a:hover {
     padding: 4rem 0;
 }
 
-.historia-content {
+.historia-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
     align-items: center;
 }
 
+.historia-texto {
+    animation: fadeIn 1s forwards;
+}
+
 .historia-img {
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    animation: slideIn 1s forwards;
 }
 
 .historia-img img {
@@ -103,9 +124,40 @@ nav ul li a:hover {
     display: block;
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
 .diferenciais {
     background-color: var(--cinza-claro);
     padding: 4rem 0;
+}
+
+.secao-titulo {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--azul-claro);
+    border-bottom: 2px solid var(--azul-claro);
+    padding-bottom: 0.5rem;
+    display: inline-block;
 }
 
 .diferenciais-grid {
@@ -119,8 +171,14 @@ nav ul li a:hover {
     background-color: var(--branco);
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.diferencial:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .diferencial i {
@@ -134,6 +192,11 @@ nav ul li a:hover {
     text-align: center;
 }
 
+.equipe-descricao {
+    margin-bottom: 2rem;
+    color: #666;
+}
+
 .equipe-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -145,7 +208,7 @@ nav ul li a:hover {
     background-color: var(--branco);
     padding: 1.5rem;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .membro-img {
@@ -159,6 +222,12 @@ nav ul li a:hover {
     align-items: center;
     justify-content: center;
     color: #777;
+}
+
+.membro img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .valores {
@@ -215,7 +284,7 @@ footer {
 .footer-col ul li a {
     color: var(--branco);
     text-decoration: none;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 
 .footer-col ul li a:hover {
@@ -225,7 +294,7 @@ footer {
 .copyright {
     text-align: center;
     padding-top: 1.5rem;
-    border-top: 1px solid rgba(255,255,255,0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 @media (max-width: 768px) {
@@ -233,20 +302,20 @@ footer {
         flex-direction: column;
         text-align: center;
     }
-    
+
     nav ul {
         margin-top: 1rem;
         justify-content: center;
     }
-    
+
     nav ul li {
         margin: 0 0.5rem;
     }
-    
-    .historia-content {
+
+    .historia-container {
         grid-template-columns: 1fr;
     }
-    
+
     .hero-sobre h1 {
         font-size: 2.2rem;
     }

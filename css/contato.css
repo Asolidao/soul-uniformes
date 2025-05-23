@@ -5,6 +5,7 @@
     --branco: #ffffff;
     --cinza-claro: #f5f5f5;
     --verde: #28a745;
+    --sombra-padrao: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 body {
@@ -25,7 +26,7 @@ header {
     background-color: var(--azul-escuro);
     color: var(--branco);
     padding: 1rem 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: var(--sombra-padrao);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -42,6 +43,8 @@ header {
     font-size: 2rem;
     text-transform: uppercase;
     letter-spacing: 2px;
+    color: var(--branco);
+    text-decoration: none;
 }
 
 .logo span {
@@ -62,7 +65,7 @@ nav ul li a {
     color: var(--branco);
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
@@ -74,6 +77,19 @@ nav ul li a:hover {
     color: var(--branco);
     padding: 4rem 0;
     text-align: center;
+    animation: heroFadeIn 0.8s forwards;
+}
+
+@keyframes heroFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .hero-contato h1 {
@@ -92,7 +108,20 @@ nav ul li a:hover {
     background-color: var(--branco);
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    animation: formFadeIn 1s forwards;
+}
+
+@keyframes formFadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .form-contato h2 {
@@ -109,6 +138,7 @@ nav ul li a:hover {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: 500;
+    color: var(--azul-escuro);
 }
 
 .form-group input,
@@ -120,6 +150,15 @@ nav ul li a:hover {
     border-radius: 4px;
     font-family: inherit;
     font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: var(--azul-medio);
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 102, 204, 0.2);
 }
 
 .form-group textarea {
@@ -135,24 +174,38 @@ nav ul li a:hover {
     border-radius: 4px;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s;
     font-size: 1rem;
 }
 
 .btn-enviar:hover {
     background-color: var(--azul-medio);
+    transform: translateY(-2px);
 }
 
 .info-contato {
     display: flex;
     flex-direction: column;
+    animation: infoFadeIn 1s forwards;
+}
+
+@keyframes infoFadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .info-card {
     background-color: var(--branco);
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
     margin-bottom: 2rem;
 }
 
@@ -177,11 +230,27 @@ nav ul li a:hover {
 .contato-text h3 {
     margin-top: 0;
     margin-bottom: 0.5rem;
+    color: var(--azul-escuro);
 }
 
 .contato-text p {
     margin: 0;
     color: #666;
+}
+
+.atendimento-rapido {
+    text-align: center;
+}
+
+.whatsapp-btn {
+    background-color: var(--verde);
+    color: var(--branco);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    margin-top: 1rem;
 }
 
 .mapa {
@@ -228,7 +297,7 @@ footer {
 .footer-col ul li a {
     color: var(--branco);
     text-decoration: none;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 
 .footer-col ul li a:hover {
@@ -238,7 +307,7 @@ footer {
 .copyright {
     text-align: center;
     padding-top: 1.5rem;
-    border-top: 1px solid rgba(255,255,255,0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 @media (max-width: 768px) {
@@ -246,20 +315,20 @@ footer {
         flex-direction: column;
         text-align: center;
     }
-    
+
     nav ul {
         margin-top: 1rem;
         justify-content: center;
     }
-    
+
     nav ul li {
         margin: 0 0.5rem;
     }
-    
+
     .hero-contato h1 {
         font-size: 2.2rem;
     }
-    
+
     .contato-container {
         grid-template-columns: 1fr;
     }

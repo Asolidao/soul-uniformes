@@ -43,8 +43,8 @@ header {
     font-size: 2rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: var(--branco);
-    text-decoration: none;
+    color: var(--branco); /* Adicionado cor para o logo no header */
+    text-decoration: none; /* Adicionado text-decoration para o logo */
 }
 
 .logo span {
@@ -97,75 +97,21 @@ nav ul li a:hover {
     margin-bottom: 1rem;
 }
 
+/* Contêiner principal da área de contato */
 .contato-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    padding: 4rem 0;
+    grid-template-columns: 1fr 1fr; /* Duas colunas iguais */
+    gap: 3rem; /* Espaçamento entre as colunas */
+    padding: 4rem 0; /* Espaçamento superior e inferior da seção */
+    align-items: flex-start; /* Alinha os itens ao topo */
 }
 
-.form-contato {
-    background-color: var(--branco);
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-    animation: formFadeIn 1s forwards;
-}
+/* REMOÇÃO COMPLETA DOS ESTILOS DO FORMULÁRIO */
+/* Os blocos de estilo do formulário (classes .form-contato, .form-group, etc.) foram removidos
+   conforme sua solicitação. Se precisar deles novamente, adicione-os de volta. */
 
-@keyframes formFadeIn {
-    from {
-        opacity: 0;
-        transform: translateX(-20px);
-    }
 
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-.form-contato h2 {
-    color: var(--azul-escuro);
-    margin-top: 0;
-    margin-bottom: 1.5rem;
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-    color: var(--azul-escuro);
-}
-
-.form-group input,
-.form-group textarea,
-.form-group select {
-    width: 100%;
-    padding: 0.8rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-family: inherit;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
-}
-
-.form-group input:focus,
-.form-group textarea:focus,
-.form-group select:focus {
-    border-color: var(--azul-medio);
-    outline: none;
-    box-shadow: 0 0 5px rgba(0, 102, 204, 0.2);
-}
-
-.form-group textarea {
-    min-height: 120px;
-    resize: vertical;
-}
-
+/* Estilos para o botão de enviar (usado no WhatsApp) */
 .btn-enviar {
     background-color: var(--azul-claro);
     color: var(--branco);
@@ -176,6 +122,7 @@ nav ul li a:hover {
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
     font-size: 1rem;
+    /* width: 100%; */ /* Removido para não forçar a largura, especialmente no WhatsApp */
 }
 
 .btn-enviar:hover {
@@ -183,9 +130,10 @@ nav ul li a:hover {
     transform: translateY(-2px);
 }
 
+/* Informações de Contato (agora agrupando todos os itens de contato e o WhatsApp) */
 .info-contato {
-    display: flex;
-    flex-direction: column;
+    /* Manter display: block ou ajustar para flex/column se a organização interna precisar */
+    display: block; 
     animation: infoFadeIn 1s forwards;
 }
 
@@ -206,7 +154,7 @@ nav ul li a:hover {
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-    margin-bottom: 2rem;
+    /* margin-bottom: 2rem; */ /* Removido para controle mais fino se for o único card */
 }
 
 .info-card h2 {
@@ -230,7 +178,7 @@ nav ul li a:hover {
 .contato-text h3 {
     margin-top: 0;
     margin-bottom: 0.5rem;
-    color: var(--azul-escuro);
+    color: var(--azul-escuro); /* Adicionado cor para o h3 dentro do contato-text */
 }
 
 .contato-text p {
@@ -238,26 +186,52 @@ nav ul li a:hover {
     color: #666;
 }
 
+/* Estilo para links dentro dos textos de contato */
+.contato-text p a {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contato-text p a:hover {
+    color: var(--azul-medio);
+    text-decoration: underline;
+}
+
+/* Estilo para o bloco Atendimento Rápido (dentro do info-card) */
 .atendimento-rapido {
     text-align: center;
+    margin-top: 2rem; /* Espaçamento com o conteúdo acima */
+    border-top: 1px solid #eee; /* Linha divisória */
+    padding-top: 1.5rem; /* Espaçamento após a linha */
 }
 
+/* Estilo específico para o botão do WhatsApp */
 .whatsapp-btn {
-    background-color: var(--verde);
+    background-color: var(--verde); /* Usa a cor verde */
     color: var(--branco);
-    display: inline-flex;
+    display: inline-flex; /* Garante que o ícone e o texto fiquem na mesma linha */
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
+    gap: 0.5rem; /* Espaçamento entre ícone e texto */
     text-decoration: none;
-    margin-top: 1rem;
+    border-radius: 4px;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
 }
 
+.whatsapp-btn:hover {
+    background-color: #218838; /* Um verde um pouco mais escuro no hover */
+    transform: translateY(-2px);
+}
+
+/* Estilo para o mapa */
 .mapa {
-    height: 300px;
+    height: 100%; /* Ocupa a altura total disponível na coluna do grid */
+    min-height: 450px; /* Garante uma altura mínima para o mapa */
     background-color: #eee;
-    border-radius: 8px;
     overflow: hidden;
+    /* A sombra e border-radius virão da classe .info-card */
 }
 
 .mapa iframe {
@@ -330,6 +304,15 @@ footer {
     }
 
     .contato-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Uma coluna em telas pequenas */
+        gap: 2rem; /* Reduz o espaçamento */
+    }
+
+    .info-card {
+        margin-bottom: 1rem; /* Reduz o espaçamento entre cards em telas pequenas */
+    }
+
+    .mapa {
+        min-height: 300px; /* Altura menor para o mapa em celulares */
     }
 }

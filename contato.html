@@ -6,6 +6,8 @@
     <title>Contato - Soul Uniformes e Brindes</title>
     <link rel="stylesheet" href="css/contato.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/whats-button.css">
 </head>
 <body>
     <header>
@@ -14,13 +16,38 @@
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="sobre.html">Sobre</a></li>
                     <li><a href="produtos.html">Produtos</a></li>
                     <li><a href="contato.html">Contato</a></li>
                 </ul>
             </nav>
         </div>
     </header>
+
+        <div class="whatsapp">
+            <div class="whatsapp-abrir">
+                <img src="Img/icow.png" alt="WhatsApp Icon" class="whatsapp-icon">
+            </div>
+            <div class="whatsapp-fechar"> X </div>
+        </div>
+        <div class="whatsapp-aberto">
+            <div class="whats-header">
+                <h3>Olá!</h3>
+                <p>Como podemos ajudar?</p>
+            </div>
+            <div class="whats-departamentos">
+                <div class="whats-departamento">
+                    <h4>Contato</h4>
+                    <p>(54) 99950-7357</p>
+                    <div class="whats-btn">
+                        <a href="https://wa.me/5554999507357" target="_blank">
+                            <button class="btn btn-link" type="button">
+                                <span>WhatsApp</span>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     
     <section class="hero-contato">
         <div class="container">
@@ -30,45 +57,7 @@
     </section>
     
     <div class="container">
-        <div class="contato-container">
-            <div class="form-contato">
-                <h2>Envie sua Mensagem</h2>
-                <form action="#" method="POST">
-                    <div class="form-group">
-                        <label for="nome">Nome Completo</label>
-                        <input type="text" id="nome" name="nome" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">E-mail</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="telefone">Telefone</label>
-                        <input type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="assunto">Assunto</label>
-                        <select id="assunto" name="assunto" required>
-                            <option value="">Selecione...</option>
-                            <option value="orcamento">Solicitar Orçamento</option>
-                            <option value="duvida">Dúvida sobre Produtos</option>
-                            <option value="rastreio">Rastreamento de Pedido</option>
-                            <option value="outro">Outro Assunto</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="mensagem">Mensagem</label>
-                        <textarea id="mensagem" name="mensagem" required></textarea>
-                    </div>
-                    
-                    <button type="submit" class="btn-enviar">Enviar Mensagem</button>
-                </form>
-            </div>
-            
+         <div class="contato-container">
             <div class="info-contato">
                 <div class="info-card">
                     <h2>Informações de Contato</h2>
@@ -85,7 +74,7 @@
                         <i class="fas fa-phone-alt"></i>
                         <div class="contato-text">
                             <h3>Telefone</h3>
-                            <p><a href="tel:+5554981666377">(54) 98166-6377</a><br><a href="tel:+555430457890">(54) 3045-7890</a></p>
+                            <p>(54) 98166-6377<br>(54) 3045-7890</p>
                         </div>
                     </div>
                     
@@ -93,7 +82,7 @@
                         <i class="fas fa-envelope"></i>
                         <div class="contato-text">
                             <h3>E-mail</h3>
-                            <p><a href="mailto:contato@souluniformes.com.br">contato@souluniformes.com.br</a></p>
+                            <p>contato@souluniformes.com.br</p>
                         </div>
                     </div>
                     
@@ -104,25 +93,19 @@
                             <p>Segunda a Sexta: 8h às 18h<br>Sábado: 8h às 12h</p>
                         </div>
                     </div>
+
+                    <div class="atendimento-rapido" style="text-align: center; margin-top: 2rem; border-top: 1px solid #eee; padding-top: 1.5rem;">
+                        <h2>Atendimento Rápido</h2>
+                        <p>Para um atendimento mais ágil, você pode nos contatar diretamente pelo WhatsApp:</p>
+                        <a href="https://wa.me/5554981666377" class="btn-enviar" style="background-color: var(--verde); color: var(--branco); display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; text-decoration: none;">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                    </div>
                 </div>
-                
-                <div class="info-card">
-                    <h2>Atendimento Rápido</h2>
-                    <p>Para um atendimento mais ágil, você pode nos contatar diretamente pelo WhatsApp:</p>
-                    <a href="https://wa.me/5554981666377" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
-                        <i class="fab fa-whatsapp"></i> WhatsApp
-                    </a>
                 </div>
-                
-                <div class="mapa info-card">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14056.77191386614!2d-52.41798651671245!3d-28.262164740073835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94e2bf81c13e906b%3A0xa01daf6dc251b389!2sSOUL!5e0!3m2!1spt-BR!2sbr!4v1747972293295!5m2!1spt-BR!2sbr" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade"
-                        title="Nossa Localização no Google Maps">
-                    </iframe>
-                </div>
+            
+            <div class="mapa info-card">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3477.215647352493!2d-52.40688892436903!3d-28.26151507575919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDE1JzQxLjUiUyA1MsKwMjQnMTkuNyJX!5e0!3m2!1spt-BR!2sbr!4v1620000000000!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" title="Nossa Localização no Google Maps"></iframe>
             </div>
         </div>
     </div>
@@ -139,7 +122,6 @@
                     <h3>Links Rápidos</h3>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="sobre.html">Sobre Nós</a></li>
                         <li><a href="produtos.html">Nossos Produtos</a></li>
                         <li><a href="contato.html">Contato</a></li>
                     </ul>
@@ -169,5 +151,6 @@
             </div>
         </div>
     </footer>
+    <script src="js/whats-button.js"></script>
 </body>
 </html>

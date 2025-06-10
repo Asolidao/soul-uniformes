@@ -73,21 +73,69 @@ nav ul li a:hover {
 }
 
 .hero-produtos {
-    background: linear-gradient(135deg, var(--azul-escuro), var(--azul-medio));
     color: var(--branco);
-    padding: 4rem 0;
+    padding: 4rem 0; /* Padding para dar espaço ao texto */
     text-align: center;
+    position: relative; /* Essencial para posicionar o vídeo absoluto dentro */
+    overflow: hidden; /* Para garantir que o vídeo não saia das bordas */
+    min-height: 400px; /* Garante uma altura mínima para o hero */
+    display: flex; /* Para centralizar o conteúdo do hero */
+    align-items: center;
+    justify-content: center;
     animation: heroFadeIn 0.8s forwards;
 }
 
-@keyframes heroFadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+/* Estilo para o vídeo de fundo */
+.hero-video-background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1; /* Coloca o vídeo atrás de todo o conteúdo */
+    transform: translate(-50%, -50%); /* Centraliza o vídeo */
+    object-fit: cover; /* Garante que o vídeo cubra toda a área */
+    filter: brightness(0.7); /* Escurece o vídeo para o texto branco se destacar */
+    /* Remove a animação do background-image que pode estar no .hero */
+    /* animation: none; */
+}
+
+/* Garante que o conteúdo (h1 e p) esteja acima do vídeo */
+.hero-produtos-content {
+    position: relative; /* Garante que o container de texto tenha um z-index padrão */
+    z-index: 1; /* Coloca o conteúdo acima do vídeo */
+    width: 100%; /* Ocupa a largura total do container pai */
+    max-width: 800px; /* Limita a largura do texto para melhor leitura */
+    margin: 0 auto; /* Centraliza o bloco de texto */
 }
 
 .hero-produtos h1 {
     font-size: 2.8rem;
     margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra no texto para melhor leitura sobre o vídeo */
+}
+
+.hero-produtos p {
+    font-size: 1.2rem;
+    max-width: 700px; /* Limita a largura do parágrafo */
+    margin: 0 auto 2rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Sombra no texto para melhor leitura sobre o vídeo */
+}
+
+/* Ajustes de Responsividade (seus media queries existentes) */
+@media (max-width: 768px) {
+    .hero-produtos h1 {
+        font-size: 2.2rem;
+    }
+    .hero-produtos p {
+        font-size: 1rem;
+    }
+    .hero-produtos {
+        min-height: 300px; /* Ajusta altura mínima para mobile */
+        padding: 3rem 0;
+    }
 }
 
 .filtros {
@@ -177,13 +225,6 @@ nav ul li a:hover {
     color: #666;
     margin-bottom: 1rem;
     font-size: 0.9rem;
-}
-
-.produto-preco {
-    font-weight: bold;
-    color: var(--azul-escuro);
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
 }
 
 .produto-etiqueta {
@@ -319,4 +360,50 @@ footer {
     .produtos-lista {
         grid-template-columns: 1fr;
     }
+}
+.produtos {
+    padding: 3rem 0;
+    background-color: var(--branco);
+}
+
+.produtos h2 {
+    text-align: center;
+    color: var(--azul-escuro);
+    margin-bottom: 2rem;
+}
+
+.grid-produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.produto {
+    background-color: var(--branco);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--sombra-padrao);
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform, box-shadow;
+}
+
+.produto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.produto img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+}
+
+.produto-info {
+    padding: 1.5rem;
+}
+
+.produto-info h3 {
+    margin-top: 0;
+    color: var(--azul-escuro);
 }

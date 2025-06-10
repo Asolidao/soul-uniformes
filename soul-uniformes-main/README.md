@@ -7,4 +7,3 @@
 - Home: home.html
 - Sobre: sobre.html
 - Produtos: produtos.html
-- Contato: contato.html

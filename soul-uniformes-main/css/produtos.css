@@ -1,0 +1,409 @@
+:root {
+    --azul-escuro: #003366;
+    --azul-medio: #0066cc;
+    --azul-claro: #3399ff;
+    --branco: #ffffff;
+    --cinza-claro: #f5f5f5;
+    --verde: #28a745;
+    --sombra-produto: 0 2px 15px rgba(0,0,0,0.1);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    background-color: var(--azul-escuro);
+    color: var(--branco);
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Arial Black', sans-serif;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--branco);
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--azul-claro);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 2rem;
+}
+
+nav ul li a {
+    color: var(--branco);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--azul-claro);
+}
+
+.hero-produtos {
+    color: var(--branco);
+    padding: 4rem 0; /* Padding para dar espaço ao texto */
+    text-align: center;
+    position: relative; /* Essencial para posicionar o vídeo absoluto dentro */
+    overflow: hidden; /* Para garantir que o vídeo não saia das bordas */
+    min-height: 400px; /* Garante uma altura mínima para o hero */
+    display: flex; /* Para centralizar o conteúdo do hero */
+    align-items: center;
+    justify-content: center;
+    animation: heroFadeIn 0.8s forwards;
+}
+
+/* Estilo para o vídeo de fundo */
+.hero-video-background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1; /* Coloca o vídeo atrás de todo o conteúdo */
+    transform: translate(-50%, -50%); /* Centraliza o vídeo */
+    object-fit: cover; /* Garante que o vídeo cubra toda a área */
+    filter: brightness(0.7); /* Escurece o vídeo para o texto branco se destacar */
+    /* Remove a animação do background-image que pode estar no .hero */
+    /* animation: none; */
+}
+
+/* Garante que o conteúdo (h1 e p) esteja acima do vídeo */
+.hero-produtos-content {
+    position: relative; /* Garante que o container de texto tenha um z-index padrão */
+    z-index: 1; /* Coloca o conteúdo acima do vídeo */
+    width: 100%; /* Ocupa a largura total do container pai */
+    max-width: 800px; /* Limita a largura do texto para melhor leitura */
+    margin: 0 auto; /* Centraliza o bloco de texto */
+}
+
+.hero-produtos h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra no texto para melhor leitura sobre o vídeo */
+}
+
+.hero-produtos p {
+    font-size: 1.2rem;
+    max-width: 700px; /* Limita a largura do parágrafo */
+    margin: 0 auto 2rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Sombra no texto para melhor leitura sobre o vídeo */
+}
+
+/* Ajustes de Responsividade (seus media queries existentes) */
+@media (max-width: 768px) {
+    .hero-produtos h1 {
+        font-size: 2.2rem;
+    }
+    .hero-produtos p {
+        font-size: 1rem;
+    }
+    .hero-produtos {
+        min-height: 300px; /* Ajusta altura mínima para mobile */
+        padding: 3rem 0;
+    }
+}
+
+.filtros {
+    background-color: var(--cinza-claro);
+    padding: 2rem 0;
+}
+
+.filtros-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.filtro-btn {
+    background-color: var(--branco);
+    border: 2px solid var(--azul-medio);
+    color: var(--azul-escuro);
+    padding: 0.6rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.filtro-btn.active, .filtro-btn:hover {
+    background-color: var(--azul-medio);
+    color: var(--branco);
+    transform: scale(1.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.produtos-grid {
+    padding: 4rem 0;
+}
+
+.categoria-produtos {
+    margin-bottom: 4rem;
+}
+
+.categoria-titulo {
+    color: var(--azul-escuro);
+    border-bottom: 2px solid var(--azul-claro);
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+    display: inline-block;
+}
+
+.produtos-lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.produto-card {
+    background-color: var(--branco);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--sombra-produto);
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform, box-shadow;
+}
+
+.produto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.produto-imagem {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+}
+
+.produto-detalhes {
+    padding: 1.5rem;
+}
+
+.produto-titulo {
+    margin-top: 0;
+    color: var(--azul-escuro);
+    font-size: 1.2rem;
+}
+
+.produto-descricao {
+    color: #666;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.produto-etiqueta {
+    display: inline-block;
+    background-color: var(--verde);
+    color: var(--branco);
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.produto-btn {
+    display: inline-block;
+    background-color: var(--azul-claro);
+    color: var(--branco);
+    padding: 0.6rem 1.2rem;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+
+.produto-btn:hover {
+    background-color: var(--azul-medio);
+}
+
+.destaque-produtos {
+    background-color: var(--azul-escuro);
+    color: var(--branco);
+    padding: 4rem 0;
+    text-align: center;
+    animation: destaqueFadeIn 1s forwards;
+}
+
+@keyframes destaqueFadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.destaque-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.destaque-btn {
+    display: inline-block;
+    background-color: var(--azul-claro);
+    color: var(--branco);
+    padding: 0.8rem 1.8rem;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.destaque-btn:hover {
+    background-color: var(--azul-medio);
+    transform: translateY(-2px);
+}
+
+footer {
+    background-color: var(--azul-escuro);
+    color: var(--branco);
+    padding: 3rem 0 1.5rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-col h3 {
+    color: var(--azul-claro);
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-col ul li a {
+    color: var(--branco);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: var(--azul-claro);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    nav ul {
+        margin-top: 1rem;
+        justify-content: center;
+    }
+    
+    nav ul li {
+        margin: 0 0.5rem;
+    }
+    
+    .hero-produtos h1 {
+        font-size: 2.2rem;
+    }
+    
+    .produtos-lista {
+        grid-template-columns: 1fr;
+    }
+}
+.produtos {
+    padding: 3rem 0;
+    background-color: var(--branco);
+}
+
+.produtos h2 {
+    text-align: center;
+    color: var(--azul-escuro);
+    margin-bottom: 2rem;
+}
+
+.grid-produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.produto {
+    background-color: var(--branco);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--sombra-padrao);
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform, box-shadow;
+}
+
+.produto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.produto img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+}
+
+.produto-info {
+    padding: 1.5rem;
+}
+
+.produto-info h3 {
+    margin-top: 0;
+    color: var(--azul-escuro);
+}

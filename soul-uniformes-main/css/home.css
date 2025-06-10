@@ -1,0 +1,497 @@
+:root {
+    --azul-escuro: #003366;
+    --azul-medio: #0066cc;
+    --azul-claro: #3399ff;
+    --branco: #ffffff;
+    --cinza-claro: #ffffff; /* Fundo claro para contraste */
+    --sombra-padrao: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+}
+
+header {
+    background-color: var(--azul-escuro);
+    color: var(--branco);
+    padding: 1rem 0;
+    box-shadow: var(--sombra-padrao);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: all 0.3s ease-in-out; /* Transição suave para efeitos */
+    will-change: transform, box-shadow; /* Otimização de animação */
+}
+
+header.rolando {
+    transform: translateY(-50px); /* Move o header para cima */
+    box-shadow: none;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Arial Black', sans-serif;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--branco);
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--azul-claro);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 2rem;
+}
+
+nav ul li a {
+    color: var(--branco);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--azul-claro);
+}
+
+/* Estilos para o Hero  e img */
+
+.hero {
+    background: linear-gradient(135deg, var(--azul-escuro), var(--azul-medio));
+    color: var(--branco);
+    padding: 0; /* Manter padding em zero, a altura será definida pelo min-height */
+    text-align: center;
+    min-height: 415px; /* Reduza a altura mínima do hero, para que ele suba */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    animation: heroFadeIn 1s forwards;
+    position: relative;
+}
+
+
+@keyframes heroFadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--azul-claro);
+    color: var(--branco);
+    padding: 0.8rem 1.8rem;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+    background-color: var(--azul-medio);
+    transform: translateY(-2px);
+}
+
+.categorias {
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.categorias h2 {
+    margin-bottom: 2rem;
+    color: var(--azul-escuro);
+}
+
+.categoria-botoes {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.categoria-btn {
+    background-color: var(--branco);
+    border: 2px solid var(--azul-medio);
+    color: var(--azul-escuro);
+    padding: 0.6rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.categoria-btn.active, .categoria-btn:hover {
+    background-color: var(--azul-medio);
+    color: var(--branco);
+    transform: scale(1.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.beneficios {
+    padding: 4rem 0;
+    background-color: var(--azul-escuro);
+    color: var(--branco);
+}
+
+.beneficios h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.grid-beneficios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.beneficio {
+    text-align: center;
+    padding: 1.5rem;
+    animation: beneficioFadeIn 0.8s backwards; /* Animação */
+}
+
+.beneficio i {
+    font-size: 2.5rem;
+    color: var(--azul-claro);
+    margin-bottom: 1rem;
+}
+
+.beneficio h3 {
+    margin-bottom: 1rem;
+}
+
+/* Keyframe animation for beneficios */
+@keyframes beneficioFadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Apply animation delay to each beneficio */
+.beneficio:nth-child(1) { animation-delay: 0.2s; }
+.beneficio:nth-child(2) { animation-delay: 0.4s; }
+.beneficio:nth-child(3) { animation-delay: 0.6s; }
+.beneficio:nth-child(4) { animation-delay: 0.8s; }
+
+
+.contato-rapido {
+    padding: 3rem 0;
+    text-align: center;
+    background-color: var(--cinza-claro); /* Fundo sutil para destacar */
+}
+
+.contato-rapido h2 {
+    color: var(--azul-escuro);
+    margin-bottom: 1.5rem;
+}
+
+footer {
+    background-color: var(--azul-escuro);
+    color: var(--branco);
+    padding: 3rem 0 1.5rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-col h3 {
+    color: var(--azul-claro);
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-col ul li a {
+    color: var(--branco);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: var(--azul-claro);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    nav ul {
+        margin-top: 1rem;
+    }
+    
+    nav ul li {
+        margin: 0 0.5rem;
+    }
+    
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .categoria-botoes {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .grid-produtos {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-beneficios {
+        grid-template-columns: 1fr; /* Um benefício por linha em telas menores */
+    }
+}
+
+/* Remove o botão azul (se ele ainda estiver no HTML por engano) */
+.btn {
+    display: none;
+}
+
+/* Estilos para o Carrossel */
+.carousel-container {
+    position: absolute; /* POSICIONAMENTO ABSOLUTO */
+    top: 0;
+    left: 0;
+    width: 100%; /* OCUPA 100% DA LARGURA DO HERO */
+    height: 100%; /* OCUPA 100% DA ALTURA DO HERO */
+    overflow: hidden;
+    margin-top: 0; /* REMOVER MARGIN TOP */
+    border-radius: 0; /* REMOVER BORDAS ARREDONDADAS AQUI */
+    box-shadow: none; /* REMOVER SOMBRA AQUI */
+    background-color: #333; /* Fundo para carregar antes da imagem */
+    
+}
+
+.carousel-images {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative; /* Para posicionar as imagens absolutas */
+}
+
+.carousel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+    flex-shrink: 0; /* Impede que as imagens encolham */
+    position: absolute; /* Para sobrepor as imagens e controlar a visibilidade */
+    opacity: 0; /* Esconde todas as imagens por padrão */
+    transition: opacity 1.2s ease-in-out; /* Transição suave para o efeito de fade */
+    filter: brightness(0.8); /* Escurece um pouco as imagens para o texto se destacar */
+}
+
+.carousel-image.active {
+    opacity: 1; /* Mostra a imagem ativa */
+    z-index: 1; /* Garante que a imagem ativa fique no topo */
+}
+
+.carousel-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    z-index: 3; /* Garante que as bolinhas fiquem acima do texto e da imagem */
+}
+
+.dot {
+    width: 14px;
+    height: 14px;
+    background-color: rgba(255, 255, 255, 0.6); /* Bolinhas semi-transparentes */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.4s, transform 0.4s;
+    border: 2px solid rgba(255, 255, 255, 0.9); /* Borda para destaque */
+}
+
+.dot.active, .dot:hover {
+    background-color: var(--azul-claro); /* Cor ativa das bolinhas */
+    transform: scale(1.3); /* Aumenta um pouco a bolinha ativa/hover */
+    border-color: var(--azul-claro);
+}
+
+/* Ajustes para Responsividade do Carrossel */
+@media (max-width: 900px) {
+    .carousel-container {
+        max-width: 100%; /* Permite que o carrossel ocupe a largura total do container */
+        height: 350px; /* Ajusta a altura */
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        min-height: auto; /* Remove altura mínima em telas menores */
+        padding: 3rem 0;
+    }
+    .hero h1 {
+        font-size: 2.2rem; /* Ajusta tamanho do h1 */
+    }
+    .hero p {
+        font-size: 1rem; /* Ajusta tamanho do parágrafo */
+    }
+    .carousel-container {
+        height: 250px; /* Altura menor para celulares */
+        margin-top: 2rem;
+    }
+    .carousel-dots {
+        bottom: 10px; /* Ajusta posição das bolinhas */
+        gap: 8px;
+    }
+    .dot {
+        width: 50px;
+        height: 10px;
+    }
+}
+/*Etilizacao do sobre */
+.historia {
+    padding: 4rem 0;
+}
+
+.historia-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.historia-texto {
+    animation: fadeIn 1s forwards;
+}
+
+.historia-img {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    animation: slideIn 1s forwards;
+}
+
+.historia-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/*aaaaaaaaaaaaaaaaaaaaaa*/
+/* Estilos para a Seção de Clientes/Cases de Sucesso (agora com Swiper.js) */
+.clientes-carousel-section {
+    padding: 4rem 0;
+    text-align: center;
+    background-color: var(--cinza-claro); /* Um fundo sutil para destacar */
+}
+
+.clientes-carousel-title {
+    font-size: 2.2rem;
+    color: var(--azul-escuro);
+    margin-bottom: 3rem;
+    position: relative;
+    display: inline-block;
+}
+
+.clientes-carousel-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: var(--azul-claro);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* Estilos para o contêiner do Swiper */
+.mySwiperClientes {
+    width: 100%;
+    max-width: 1200px; /* Largura máxima para o carrossel de logos */
+    height: 150px; /* Altura fixa para o carrossel de logos */
+    margin: 0 auto; /* Centraliza */
+    background-color: var(--branco); /* Fundo branco puro */
+    /* Removido border-radius e box-shadow aqui, conforme sua última instrução */
+}
+
+/* Estilos para cada slide (logo individual) */
+.swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Adicione padding se os logos ficarem muito colados nas bordas do slide */
+    /* padding: 0 10px; */
+}
+
+.swiper-slide img {
+    max-width: 120px; /* Tamanho máximo de cada logo */
+    max-height: 80px; /* Altura máxima para garantir que não saia do contêiner */
+    object-fit: contain; /* Redimensiona a imagem para caber sem cortar */
+}
+
+
+
+/* Estilos para as bolinhas de paginação do Swiper */
+.swiper-pagination-clientes {
+    /* Ajuste a posição das bolinhas se necessário, Swiper já as posiciona */
+    bottom: 10px; 
+}
+
+/* Cor das bolinhas ativas do Swiper */
+.swiper-pagination-bullet-active {
+    background-color: var(--azul-medio) !important; 
+}
+
+/* Responsividade para o Swiper de clientes */
+@media (max-width: 768px) {
+    .clientes-carousel-title {
+        font-size: 1.8rem;
+    }
+    .mySwiperClientes {
+        height: 100px; /* Altura menor para celulares */
+    }
+    .swiper-slide img {
+        max-width: 80px; /* Logos menores em celulares */
+        max-height: 60px;
+    }
+}

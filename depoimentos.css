@@ -58,19 +58,19 @@
 
 /* Wrapper para o vídeo para torná-lo responsivo com aspect ratio */
 /* ATENÇÃO: Esta é a regra principal para fazer VÍDEOS (IFRAMES) serem responsivos */
-.video-responsive {
-    position: relative;
-    padding-bottom: 56.25%; /* Proporção 16:9 (altura/largura = 9/16 = 0.5625 = 56.25%) */
-    padding-top: 0;
-    height: 0;
-    width: 100%;
-    overflow: hidden;
-    background-color: #000; /* Fundo preto enquanto o vídeo carrega */
-    flex-grow: 1; /* Permite que o wrapper do vídeo cresça e ocupe o espaço */
-    display: flex; /* Adicionado: Para garantir que o iframe interno use flex */
-    justify-content: center; /* Adicionado: Centraliza o iframe */
-    align-items: center; /* Adicionado: Centraliza o iframe */
-}
+    .video-responsive {
+        position: relative;
+        padding-bottom: 56.25%; /* Proporção 16:9 */
+        padding-top: 0;
+        height: 0;
+        width: 100%; /* Ocupa 100% da largura do slide */
+        overflow: hidden;
+        background-color: #000; /* Fundo preto enquanto o vídeo carrega */
+        flex-grow: 1; /* PERMITE QUE ESTE BLOCO OCUPE TODO O ESPAÇO DISPONÍVEL verticalmente */
+        display: flex; /* Para centralizar o iframe dentro dele */
+        justify-content: center;
+        align-items: center;
+    }
 
 .video-responsive iframe,
 .video-responsive object,
@@ -84,22 +84,25 @@
     display: block;
 }
 
-.swiper-slide {
-    background-color: var(--cinza-claro); /* Fundo para os slides */
-    border-radius: 12px;
-    overflow: hidden; /* Garante que o conteúdo não vaze */
-    /* Alterado para flexbox para melhor controle do conteúdo interno */
-    display: flex;
-    flex-direction: column; /* Conteúdo em coluna (vídeo em cima, info embaixo) */
-    justify-content: flex-start; /* Alinha o conteúdo ao topo do slide */
-    align-items: center; /* Centraliza horizontalmente o conteúdo (vídeo e info) */
-    text-align: center;
-    position: relative; /* Para posicionar o depoimento-info (se for absoluto) */
-    transition: transform 0.3s ease-in-out; /* Transição para o scale */
-    box-sizing: border-box; /* Garante que padding/border não causem overflow */
-    height: 100%; /* Garante que o slide ocupe toda a altura do carrossel */
-    width: 100%; /* Garante que o slide ocupe toda a largura disponível */
-}
+    .swiper-slide {
+        background-color: var(--cinza-claro); /* Fundo para os slides (pode ser ajustado) */
+        border-radius: 12px;
+        overflow: hidden; /* Garante que o conteúdo não vaze */
+        
+        /* ESSENCIAL: Garante que o slide seja um container flex para o vídeo e info */
+        display: flex;
+        flex-direction: column; /* Coloca o vídeo em cima e as infos embaixo */
+        justify-content: space-between; /* Distribui espaço: vídeo no topo, info no rodapé */
+        align-items: center; /* Centraliza horizontalmente o conteúdo */
+        text-align: center; /* Centraliza texto */
+
+        position: relative;
+        transition: transform 0.3s ease-in-out;
+        box-sizing: border-box;
+        height: 100%; /* O slide deve ocupar 100% da altura do carrossel */
+        width: 100%; /* O slide deve ocupar 100% da largura do carrossel */
+        padding-bottom: 0; /* Certifique-se de que não há padding inferior */
+    }
 
 /* Efeito de zoom no slide central (pode ser ajustado) */
 .swiper-slide-active {
@@ -107,17 +110,16 @@
     z-index: 2;
 }
 
-.depoimento-info {
-    position: relative; /* Mudar de absolute para relative, pois o slide agora é flex container */
-    bottom: unset; /* Remove o bottom se estava setado absoluto */
-    left: unset; /* Remove o left se estava setado absoluto */
-    width: 100%;
-    background: rgba(0, 0, 0, 0.6); /* Fundo semi-transparente para o texto */
-    color: var(--branco);
-    padding: 15px;
-    box-sizing: border-box;
-    margin-top: auto; /* Empurra o depoimento-info para o fundo quando o slide é flex-column */
-}
+    .depoimento-info {
+        position: relative; /* Mudado para relative para melhor fluxo flex */
+        width: 100%;
+        background: rgba(0, 0, 0, 0.7); /* Fundo um pouco mais escuro para melhor contraste */
+        color: var(--branco);
+        padding: 15px;
+        box-sizing: border-box;
+        margin-top: 0; /* Garante que não haja margem extra aqui */
+        flex-shrink: 0; /* Impede que o info-box encolha */
+    }
 
 .depoimento-info h4 {
     margin: 0;
@@ -216,7 +218,7 @@
         font-size: 1rem;
     }
     .depoimentos-carousel-container {
-        height: 300px;
+        height: 250px;
         min-width: unset;
     }
     .mySwiperDepoimentos {
@@ -226,7 +228,7 @@
         border-radius: 8px;
     }
     .video-responsive {
-        padding-bottom: 65%; /* Um pouco mais de altura se 16:9 for muito largo em telas muito pequenas */
+        padding-bottom: 70%; /* Um pouco mais de altura se 16:9 for muito largo em telas muito pequenas */
     }
     .swiper-button-next,
     .swiper-button-prev {

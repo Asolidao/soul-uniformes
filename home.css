@@ -502,15 +502,75 @@ footer {
 }
 
 /* Responsividade para o Swiper de clientes */
+/* home.css - DENTRO do @media (max-width: 768px) */
+
 @media (max-width: 768px) {
-    .clientes-carousel-title {
-        font-size: 1.8rem;
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem 0; /* Adicionado: padding para o conteúdo do header ao empilhar */
     }
-    .mySwiperClientes {
-        height: 100px; /* Altura menor para celulares */
+
+    nav ul {
+        margin-top: 1rem;
+        flex-wrap: wrap; /* Adicionado: Permite que os itens quebrem linha se a tela for muito estreita */
+        justify-content: center; /* Adicionado: Centraliza os itens do menu */
     }
-    .swiper-slide img {
-        max-width: 80px; /* Logos menores em celulares */
-        max-height: 60px;
+
+    nav ul li {
+        margin: 0.5rem 0.8rem; /* Atualizado: Margem ajustada para melhor espaçamento */
     }
+
+    /* --- Ajustes para a seção Hero (carrossel de imagens) --- */
+    .hero {
+        min-height: 350px; /* Atualizado: Aumentado para 350px para celulares */
+        padding: 0 1rem; /* Adicionado: Padding para não colar nas bordas */
+    }
+
+    .carousel-container {
+        height: 350px; /* Ajusta a altura da imagem para caber */
+        min-height: 250px; /* Adicionado: Para evitar que fique muito pequeno */
+    }
+    .carousel-dots {
+        bottom: 15px; /* Ajusta a posição das bolinhas */
+    }
+    .dot {
+        width: 10px; /* Diminuir o tamanho das bolinhas em mobile */
+        height: 10px;
+        gap: 5px; /* Menos espaçamento entre bolinhas */
+    }
+
+    /* --- Ajustes para a seção "Quem Somos" (historia) --- */
+    .historia-container {
+        grid-template-columns: 1fr; /* Muda para uma coluna em telas pequenas */
+        gap: 2rem; /* Reduz o espaçamento entre os itens */
+        padding: 0 1rem; /* Padding lateral para não colar nas bordas */
+    }
+    .historia-texto {
+        text-align: center; /* Centraliza o texto quando empilhado */
+    }
+    .historia iframe { /* Ajustar o iframe do vídeo na seção Quem Somos */
+        width: 100%; /* Ocupa a largura total */
+        height: auto; /* Altura automática para manter proporção */
+        min-height: 250px; /* Altura mínima para o vídeo */
+    }
+
+    /* --- Ajustes para a seção de Benefícios --- */
+    .grid-beneficios {
+        grid-template-columns: 1fr; /* Um benefício por linha em telas menores */
+        padding: 0 1rem; /* Adicionar padding horizontal para não colar nas bordas */
+    }
+    .beneficio {
+        padding: 1rem; /* Ajusta o padding interno dos benefícios */
+    }
+
+    /* --- Ajustes para a Seção Clientes Carrossel --- */
+    .clientes-carousel-section {
+        padding: 2rem 0; /* Menos padding em cima/baixo para telas menores */
+    }
+    /* As regras para .clientes-carousel-title, .mySwiperClientes, .swiper-slide img
+       já estão no depoimentos.css e home.css (apenas o título),
+       e o Swiper.js cuida do restante da responsividade do carrossel.
+       Não precisa repetir aqui se já estiverem em outro @media mais específico. */
 }
+

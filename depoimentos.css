@@ -1,4 +1,10 @@
 /* Estilos para a Seção de Depoimentos de Clientes */
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none; /* Remove bordas do iframe */
+}
 .depoimentos-section {
     padding: 6rem 0; /* Padding maior para esta seção */
     background-color: var(--branco); /* Fundo branco ou cor que preferir */

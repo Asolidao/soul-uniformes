@@ -1,19 +1,19 @@
 /* Estilos para a Seção de Depoimentos de Clientes */
 .depoimentos-section {
-    padding: 6rem 0;
-    background-color: var(--branco);
+    padding: 6rem 0; /* Padding maior para esta seção */
+    background-color: var(--branco); /* Fundo branco ou cor que preferir */
 }
 
 .depoimentos-content {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 3rem;
-    align-items: center;
+    display: flex; /* Para criar as duas colunas */
+    flex-wrap: wrap; /* Permite quebrar linha em telas menores */
+    gap: 3rem; /* Espaçamento entre as colunas */
+    align-items: center; /* Centraliza verticalmente o conteúdo */
 }
 
 .depoimentos-texto-lateral {
-    flex: 1;
-    min-width: 300px;
+    flex: 1; /* Ocupa o espaço restante */
+    min-width: 300px; /* Largura mínima para o texto */
     text-align: left;
 }
 
@@ -25,7 +25,7 @@
     display: inline-block;
 }
 
-.depoimentos-texto-lateral h2::after {
+.depoimentos-texto-lateral h2::after { /* Linha decorativa */
     content: '';
     display: block;
     width: 80px;
@@ -43,83 +43,57 @@
 }
 
 .depoimentos-carousel-container {
-    flex: 2;
-    min-width: 400px;
+    flex: 2; /* Ocupa o dobro do espaço do texto */
+    min-width: 400px; /* Largura mínima para o carrossel */
     position: relative;
-    height: 450px; /* Altura fixa para o carrossel de depoimentos em desktop */
+    height: 450px; /* Altura fixa para o carrossel de depoimentos */
+    /* Remove padding interno se quiser que o slide preencha */
 }
 
 /* Estilos para o Swiper de Depoimentos */
 .mySwiperDepoimentos {
     width: 100%;
     height: 100%;
+    /* Ajustes para o efeito de "passar slides" */
     padding: 0 50px; /* Padding para mostrar um pedaço dos slides laterais */
 }
 
-/* Wrapper para o vídeo para torná-lo responsivo com aspect ratio */
-/* ATENÇÃO: Esta é a regra principal para fazer VÍDEOS (IFRAMES) serem responsivos */
-    .video-responsive {
-        position: relative;
-        padding-bottom: 56.25%; /* Proporção 16:9 */
-        padding-top: 0;
-        height: 0;
-        width: 100%; /* Ocupa 100% da largura do slide */
-        overflow: hidden;
-        background-color: #000; /* Fundo preto enquanto o vídeo carrega */
-        flex-grow: 1; /* PERMITE QUE ESTE BLOCO OCUPE TODO O ESPAÇO DISPONÍVEL verticalmente */
-        display: flex; /* Para centralizar o iframe dentro dele */
-        justify-content: center;
-        align-items: center;
-    }
-
-.video-responsive iframe,
-.video-responsive object,
-.video-responsive embed {
-    position: absolute; /* Deve ser absoluto para o truque do padding-bottom */
-    top: 0;
-    left: 0;
-    width: 100%; /* Ocupa 100% do .video-responsive */
-    height: 100%; /* Ocupa 100% do .video-responsive */
-    border: none;
-    display: block;
+.swiper-slide {
+    background-color: var(--cinza-claro); /* Fundo para os slides */
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column; /* Conteúdo em coluna */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative; /* Para posicionar o depoimento-info */
+    transition: transform 0.3s ease-in-out; /* Transição para o scale */
 }
-
-    .swiper-slide {
-        background-color: var(--cinza-claro); /* Fundo para os slides (pode ser ajustado) */
-        border-radius: 12px;
-        overflow: hidden; /* Garante que o conteúdo não vaze */
-        
-        /* ESSENCIAL: Garante que o slide seja um container flex para o vídeo e info */
-        display: flex;
-        flex-direction: column; /* Coloca o vídeo em cima e as infos embaixo */
-        justify-content: space-between; /* Distribui espaço: vídeo no topo, info no rodapé */
-        align-items: center; /* Centraliza horizontalmente o conteúdo */
-        text-align: center; /* Centraliza texto */
-
-        position: relative;
-        transition: transform 0.3s ease-in-out;
-        box-sizing: border-box;
-        height: 100%; /* O slide deve ocupar 100% da altura do carrossel */
-        width: 100%; /* O slide deve ocupar 100% da largura do carrossel */
-        padding-bottom: 0; /* Certifique-se de que não há padding inferior */
-    }
 
 /* Efeito de zoom no slide central (pode ser ajustado) */
 .swiper-slide-active {
-    transform: scale(1.05);
-    z-index: 2;
+    transform: scale(1.05); /* Aumenta um pouco o slide ativo */
+    z-index: 2; /* Garante que o slide ativo fique por cima */
 }
 
-    .depoimento-info {
-        position: relative; /* Mudado para relative para melhor fluxo flex */
-        width: 100%;
-        background: rgba(0, 0, 0, 0.7); /* Fundo um pouco mais escuro para melhor contraste */
-        color: var(--branco);
-        padding: 15px;
-        box-sizing: border-box;
-        margin-top: 0; /* Garante que não haja margem extra aqui */
-        flex-shrink: 0; /* Impede que o info-box encolha */
-    }
+.swiper-slide video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Faz o vídeo cobrir todo o slide */
+    display: block;
+}
+
+.depoimento-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Fundo semi-transparente para o texto */
+    color: var(--branco);
+    padding: 15px;
+    box-sizing: border-box;
+}
 
 .depoimento-info h4 {
     margin: 0;
@@ -135,13 +109,13 @@
 /* Estilos para as Setas de Navegação (Swiper) */
 .swiper-button-next,
 .swiper-button-prev {
-    color: var(--azul-medio) !important;
-    font-size: 2rem !important;
-    top: 50% !important;
+    color: var(--azul-medio) !important; /* Cor das setas */
+    font-size: 2rem !important; /* Tamanho das setas */
+    top: 50% !important; /* Centraliza verticalmente */
     transform: translateY(-50%) !important;
-    width: 40px !important;
-    height: 40px !important;
-    background-color: rgba(255, 255, 255, 0.8);
+    width: 40px !important; /* Largura da área clicável */
+    height: 40px !important; /* Altura da área clicável */
+    background-color: rgba(255, 255, 255, 0.8); /* Fundo semi-transparente */
     border-radius: 50%;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     transition: background-color 0.3s, transform 0.3s;
@@ -150,52 +124,51 @@
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
     background-color: var(--branco);
-    transform: translateY(-50%) scale(1.1);
+    transform: translateY(-50%) scale(1.1); /* Efeito de hover */
 }
 
+/* Posicionamento das setas (ajuste conforme o padding do mySwiperDepoimentos) */
 .swiper-button-prev {
-    left: 10px !important;
+    left: 10px !important; /* Posição da seta esquerda */
 }
 
 .swiper-button-next {
-    right: 10px !important;
+    right: 10px !important; /* Posição da seta direita */
 }
 
 /* Estilos para as Bolinhas de Paginação */
 .swiper-pagination-depoimentos {
-    bottom: 20px !important;
+    bottom: 20px !important; /* Posição das bolinhas */
 }
 
 .swiper-pagination-bullet {
-    background-color: rgba(0, 0, 0, 0.4) !important;
+    background-color: rgba(0, 0, 0, 0.4) !important; /* Cor das bolinhas inativas */
 }
 
 .swiper-pagination-bullet-active {
-    background-color: var(--azul-medio) !important;
+    background-color: var(--azul-medio) !important; /* Cor da bolinha ativa */
 }
 
 
 /* Responsividade para a Seção de Depoimentos */
 @media (max-width: 992px) {
     .depoimentos-content {
-        flex-direction: column;
+        flex-direction: column; /* Empilha o texto e o carrossel */
         text-align: center;
         gap: 2rem;
     }
     .depoimentos-texto-lateral {
-        min-width: unset;
+        min-width: unset; /* Remove largura mínima */
         text-align: center;
-        padding: 0 1rem; /* Adicionado: Padding lateral */
     }
     .depoimentos-texto-lateral h2::after {
-        margin: 10px auto 0;
+        margin: 10px auto 0; /* Centraliza a linha decorativa */
     }
     .depoimentos-carousel-container {
-        height: 400px;
-        min-width: unset;
+        height: 400px; /* Ajusta a altura */
     }
     .mySwiperDepoimentos {
-        padding: 0 30px;
+        padding: 0 30px; /* Reduz padding lateral */
     }
     .swiper-button-next,
     .swiper-button-prev {
@@ -218,20 +191,13 @@
         font-size: 1rem;
     }
     .depoimentos-carousel-container {
-        height: 250px;
+        height: 300px; /* Altura menor para celulares */
         min-width: unset;
     }
     .mySwiperDepoimentos {
-        padding: 0 10px;
+        padding: 0 10px; /* Padding menor */
     }
     .swiper-slide {
-        border-radius: 8px;
-    }
-    .video-responsive {
-        padding-bottom: 70%; /* Um pouco mais de altura se 16:9 for muito largo em telas muito pequenas */
-    }
-    .swiper-button-next,
-    .swiper-button-prev {
-        display: none !important; /* Esconder setas em telas muito pequenas */
+        border-radius: 8px; /* Reduz arredondamento */
     }
 }

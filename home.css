@@ -174,7 +174,7 @@ nav ul li a:hover {
 
 .beneficio {
     text-align: center;
-    padding: 1rem;
+    padding: 1.5rem;
     animation: beneficioFadeIn 0.8s backwards; /* Animação */
 }
 
@@ -260,17 +260,14 @@ footer {
     .header-content {
         flex-direction: column;
         text-align: center;
-         padding: 1rem 0;
     }
     
     nav ul {
         margin-top: 1rem;
-        flex-wrap: wrap; 
-        justify-content: center; 
     }
     
     nav ul li {
-        margin: 0.5rem 0.8rem;
+        margin: 0 0.5rem;
     }
     
     .hero h1 {
@@ -288,7 +285,6 @@ footer {
 
     .grid-beneficios {
         grid-template-columns: 1fr; /* Um benefício por linha em telas menores */
-        padding: 0 1rem;
     }
 }
 
@@ -370,11 +366,6 @@ footer {
 }
 
 @media (max-width: 768px) {
-
-    .hero {
-        min-height: 350px; /* Atualizado: Aumentado de 250px para 350px para celulares */
-        padding: 0 1rem; /* Adicionado: Padding para não colar nas bordas */
-    }
     .hero-content {
         min-height: auto; /* Remove altura mínima em telas menores */
         padding: 3rem 0;
@@ -386,18 +377,16 @@ footer {
         font-size: 1rem; /* Ajusta tamanho do parágrafo */
     }
     .carousel-container {
-        height: 350px; /* Altura menor para celulares */
-        min-height: 250px;
+        height: 250px; /* Altura menor para celulares */
         margin-top: 2rem;
     }
     .carousel-dots {
-        bottom: 15px; /* Ajusta posição das bolinhas */
+        bottom: 10px; /* Ajusta posição das bolinhas */
         gap: 8px;
     }
     .dot {
-        width: 10px;
+        width: 50px;
         height: 10px;
-        gap: 5px; /* Reduz o tamanho das bolinhas */
     }
 }
 /*Etilizacao do sobre */
@@ -407,21 +396,13 @@ footer {
 
 .historia-container {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
     align-items: center;
-    padding: 0 1rem; /* Adiciona padding para não colar nas bordas */
 }
 
 .historia-texto {
     animation: fadeIn 1s forwards;
-    text-align: center;
-}
-
-.historia iframe { /* Ajustar o iframe do vídeo na seção Quem Somos */
-        width: 100%; /* Ocupa a largura total */
-        height: auto; /* Altura automática para manter proporção */
-        min-height: 250px; /* Altura mínima para o vídeo */
 }
 
 .historia-img {
@@ -440,7 +421,7 @@ footer {
 /*aaaaaaaaaaaaaaaaaaaaaa*/
 /* Estilos para a Seção de Clientes/Cases de Sucesso (agora com Swiper.js) */
 .clientes-carousel-section {
-    padding: 2rem 0;
+    padding: 4rem 0;
     text-align: center;
     background-color: var(--cinza-claro); /* Um fundo sutil para destacar */
 }
@@ -502,75 +483,15 @@ footer {
 }
 
 /* Responsividade para o Swiper de clientes */
-/* home.css - DENTRO do @media (max-width: 768px) */
-
 @media (max-width: 768px) {
-    .header-content {
-        flex-direction: column;
-        text-align: center;
-        padding: 1rem 0; /* Adicionado: padding para o conteúdo do header ao empilhar */
+    .clientes-carousel-title {
+        font-size: 1.8rem;
     }
-
-    nav ul {
-        margin-top: 1rem;
-        flex-wrap: wrap; /* Adicionado: Permite que os itens quebrem linha se a tela for muito estreita */
-        justify-content: center; /* Adicionado: Centraliza os itens do menu */
+    .mySwiperClientes {
+        height: 100px; /* Altura menor para celulares */
     }
-
-    nav ul li {
-        margin: 0.5rem 0.8rem; /* Atualizado: Margem ajustada para melhor espaçamento */
+    .swiper-slide img {
+        max-width: 80px; /* Logos menores em celulares */
+        max-height: 60px;
     }
-
-    /* --- Ajustes para a seção Hero (carrossel de imagens) --- */
-    .hero {
-        min-height: 350px; /* Atualizado: Aumentado para 350px para celulares */
-        padding: 0 1rem; /* Adicionado: Padding para não colar nas bordas */
-    }
-
-    .carousel-container {
-        height: 350px; /* Ajusta a altura da imagem para caber */
-        min-height: 250px; /* Adicionado: Para evitar que fique muito pequeno */
-    }
-    .carousel-dots {
-        bottom: 15px; /* Ajusta a posição das bolinhas */
-    }
-    .dot {
-        width: 10px; /* Diminuir o tamanho das bolinhas em mobile */
-        height: 10px;
-        gap: 5px; /* Menos espaçamento entre bolinhas */
-    }
-
-    /* --- Ajustes para a seção "Quem Somos" (historia) --- */
-    .historia-container {
-        grid-template-columns: 1fr; /* Muda para uma coluna em telas pequenas */
-        gap: 2rem; /* Reduz o espaçamento entre os itens */
-        padding: 0 1rem; /* Padding lateral para não colar nas bordas */
-    }
-    .historia-texto {
-        text-align: center; /* Centraliza o texto quando empilhado */
-    }
-    .historia iframe { /* Ajustar o iframe do vídeo na seção Quem Somos */
-        width: 100%; /* Ocupa a largura total */
-        height: auto; /* Altura automática para manter proporção */
-        min-height: 250px; /* Altura mínima para o vídeo */
-    }
-
-    /* --- Ajustes para a seção de Benefícios --- */
-    .grid-beneficios {
-        grid-template-columns: 1fr; /* Um benefício por linha em telas menores */
-        padding: 0 1rem; /* Adicionar padding horizontal para não colar nas bordas */
-    }
-    .beneficio {
-        padding: 1rem; /* Ajusta o padding interno dos benefícios */
-    }
-
-    /* --- Ajustes para a Seção Clientes Carrossel --- */
-    .clientes-carousel-section {
-        padding: 2rem 0; /* Menos padding em cima/baixo para telas menores */
-    }
-    /* As regras para .clientes-carousel-title, .mySwiperClientes, .swiper-slide img
-       já estão no depoimentos.css e home.css (apenas o título),
-       e o Swiper.js cuida do restante da responsividade do carrossel.
-       Não precisa repetir aqui se já estiverem em outro @media mais específico. */
 }
-

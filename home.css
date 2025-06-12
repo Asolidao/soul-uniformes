@@ -174,7 +174,7 @@ nav ul li a:hover {
 
 .beneficio {
     text-align: center;
-    padding: 1.5rem;
+    padding: 1rem;
     animation: beneficioFadeIn 0.8s backwards; /* Animação */
 }
 
@@ -260,14 +260,17 @@ footer {
     .header-content {
         flex-direction: column;
         text-align: center;
+         padding: 1rem 0;
     }
     
     nav ul {
         margin-top: 1rem;
+        flex-wrap: wrap; 
+        justify-content: center; 
     }
     
     nav ul li {
-        margin: 0 0.5rem;
+        margin: 0.5rem 0.8rem;
     }
     
     .hero h1 {
@@ -285,6 +288,7 @@ footer {
 
     .grid-beneficios {
         grid-template-columns: 1fr; /* Um benefício por linha em telas menores */
+        padding: 0 1rem;
     }
 }
 
@@ -366,6 +370,11 @@ footer {
 }
 
 @media (max-width: 768px) {
+
+    .hero {
+        min-height: 350px; /* Atualizado: Aumentado de 250px para 350px para celulares */
+        padding: 0 1rem; /* Adicionado: Padding para não colar nas bordas */
+    }
     .hero-content {
         min-height: auto; /* Remove altura mínima em telas menores */
         padding: 3rem 0;
@@ -377,16 +386,18 @@ footer {
         font-size: 1rem; /* Ajusta tamanho do parágrafo */
     }
     .carousel-container {
-        height: 250px; /* Altura menor para celulares */
+        height: 350px; /* Altura menor para celulares */
+        min-height: 250px;
         margin-top: 2rem;
     }
     .carousel-dots {
-        bottom: 10px; /* Ajusta posição das bolinhas */
+        bottom: 15px; /* Ajusta posição das bolinhas */
         gap: 8px;
     }
     .dot {
-        width: 50px;
+        width: 10px;
         height: 10px;
+        gap: 5px; /* Reduz o tamanho das bolinhas */
     }
 }
 /*Etilizacao do sobre */
@@ -396,13 +407,21 @@ footer {
 
 .historia-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    grid-template-columns: 1fr;
+    gap: 2rem;
     align-items: center;
+    padding: 0 1rem; /* Adiciona padding para não colar nas bordas */
 }
 
 .historia-texto {
     animation: fadeIn 1s forwards;
+    text-align: center;
+}
+
+.historia iframe { /* Ajustar o iframe do vídeo na seção Quem Somos */
+        width: 100%; /* Ocupa a largura total */
+        height: auto; /* Altura automática para manter proporção */
+        min-height: 250px; /* Altura mínima para o vídeo */
 }
 
 .historia-img {
@@ -421,7 +440,7 @@ footer {
 /*aaaaaaaaaaaaaaaaaaaaaa*/
 /* Estilos para a Seção de Clientes/Cases de Sucesso (agora com Swiper.js) */
 .clientes-carousel-section {
-    padding: 4rem 0;
+    padding: 2rem 0;
     text-align: center;
     background-color: var(--cinza-claro); /* Um fundo sutil para destacar */
 }

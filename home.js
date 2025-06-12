@@ -96,6 +96,27 @@
         });
     });
 
+    $('.owl-carousel').owlCarousel({
+  loop: true,
+  margin: 20,
+  responsiveClass: true,
+  responsive: {
+    0: {
+      items: 1,
+      nav: false
+    },
+    600: {
+      items: 2,
+      nav: false
+    },
+    1000: {
+      items: 3,
+      nav: true
+    }
+  }
+});
+
+
     document.addEventListener('DOMContentLoaded', () => {
         const swiperDepoimentos = new Swiper(".mySwiperDepoimentos", {
             effect: "coverflow", // Efeito de "passar slides" como na imagem

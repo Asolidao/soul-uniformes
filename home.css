@@ -395,13 +395,17 @@ footer {
 }
 
 .historia-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: row;
     gap: 3rem;
     align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .historia-texto {
+    flex: 1;
+    min-width: 300px;
     animation: fadeIn 1s forwards;
 }
 
@@ -482,6 +486,25 @@ footer {
     background-color: var(--azul-medio) !important; 
 }
 
+.video-responsive {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 25px;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+}
+.video-responsive iframe,
+.video-responsive object,
+.video-responsive embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
 /* Responsividade para o Swiper de clientes */
 @media (max-width: 768px) {
     .clientes-carousel-title {
@@ -496,28 +519,32 @@ footer {
     }
 }
 
+@media (max-width: 768px) {
+    .historia-container {
+        flex-direction: column; /* No celular, o texto fica em cima e o vídeo embaixo */
+        text-align: center; /* Centraliza o texto no celular */
+        gap: 2rem; /* Reduz o espaçamento entre o texto e o vídeo no celular */
+    }
 
-/* Afaslkhjdfgalsdkf  */
+    .historia-texto {
+        margin-bottom: 1.5rem; /* Adiciona um espaço entre o texto e o vídeo no celular */
+        padding: 0 15px; /* Adiciona um pequeno padding para o texto não colar nas bordas */
+        min-width: unset; /* Remove o min-width para o texto em celulares */
+    }
 
+    .historia-texto h2 {
+        font-size: 2rem; /* Ajusta o tamanho do título para celulares */
+        margin-bottom: 1rem;
+    }
 
+    .historia-texto p {
+        font-size: 0.95rem; /* Ajusta o tamanho do parágrafo para celulares */
+    }
 
-
-.video-responsive {
-    position: relative;
-    padding-bottom: 56.25%; /* Isso define a proporção 16:9 (altura/largura = 9/16 = 0.5625) */
-    padding-top: 25px; /* Ajuste se o vídeo tiver uma barra de título ou controles acima */
-    height: 0;
-    overflow: hidden;
-    max-width: 100%;
-    background: #000; /* Opcional: cor de fundo enquanto o vídeo carrega */
-}
-
-.video-responsive iframe,
-.video-responsive object,
-.video-responsive embed {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    /* Ajuste para o vídeo responsivo dentro da media query */
+    .video-responsive {
+        width: 100%; /* Garante que o vídeo ocupe a largura total disponível */
+        padding-top: 0; /* Remove o padding-top de 25px em mobile para maximizar o vídeo */
+        max-width: 100%; /* Garante que não ultrapasse a largura do pai */
+    }
 }
